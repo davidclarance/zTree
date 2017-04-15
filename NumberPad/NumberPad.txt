@@ -1,0 +1,1754 @@
+treatment "NumberPad"{
+	background{
+		table globals{
+		}
+		table subjects{
+		}
+		table summary{
+		}
+		table contracts{
+		}
+		table session{
+		}
+		table logfile{
+		}
+		numsubjects = 1;
+		numgroups = 1;
+		numpracticeperiods = 0;
+		numactualperiods = 1;
+		exchangerate = 1;
+		startendowment = 0;
+		showupfee = 0;
+		noAutoscope = FALSE;
+		firstBoxesOnTop = FALSE;
+		showupfeeawaytext = "Sie haben Verlust gemacht. Wollen Sie das Startgeld einsetzen, um diesen Verlust zu decken?";
+		showupfeeawayyestext = "Ja";
+		showupfeeawaynotext = "Nein";
+		moneyawaytext = "Sie haben Verlust gemacht. Wollen Sie weiterfahren?";
+		moneyawayyestext = "Ja";
+		moneyawaynotext = "Nein";
+		bancruptwaittext = "Bitte warten Sie bis Ihr Computer wieder freigegeben wird.";
+		program{
+			table = subjects;
+			do{
+				/* 
+				Authors: Chaning Jang (chaning.jang@busaracenter.org), David Clarance (david.clarance@busaracenter.org)
+				Description: This is an example of a number pad that we use on touch screens for people who've never used a mouse/keyboard before.
+				Date: April 15, 2017
+				
+				Programming notes:
+				The value of the input is stored in the variable called "number"
+				*/
+			}
+		}
+		screen action{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+		}
+		screen wait{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+			standardbox "Text"{
+				hasframe = TRUE;
+				buttonposition = BOTTOMRIGHT;
+				buttonsequence = HORIZONTAL;
+				item{
+					label = "Please wait for the experiment to continue!";
+				}
+			}
+		}
+	}
+	stage "NumPad"{
+		startwaitforall = TRUE;
+		singleentry = FALSE;
+		singleentrycontinuation = FALSE;
+		timeouttype = never;
+		timeout = 60;
+		program{
+			table = subjects;
+			do{
+				number=0;
+				digit1=99;
+				digit2=99;
+				digit3=99;
+				digit4=99;
+				digit5=99;
+				digit6=99;
+				digit7=99;
+				digit8=99;
+				digit9=99;
+				digit10=99;
+				digit11=99;
+				numdigits =0;
+				input=-999;
+				
+				
+			}
+		}
+		screen action{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+			plotbox "Instruction"{
+				hasframe = FALSE;
+				height = 25%;
+				left = 0%;
+				top = 10%;
+				maintainaspectratio = FALSE;
+				xaxistype = LINEAR;
+				yaxistype = LINEAR;
+				xleft = -100;
+				xright = 100;
+				ybottom = -100;
+				ytop = 100;
+				plottext ""{
+					text = "How old are you?";
+					horizontalalignment = CENTER;
+					verticalalignment = CENTER;
+					textcolor = rgb(0.00,0.00,0.00);
+					font = Arial;
+					fontsize = 30;
+				}
+			}
+			containerbox "ContainerNumberEntry"{
+				hasframe = FALSE;
+				width = 30%;
+				height = 50%;
+				left = 35%;
+				top = 30%;
+				containerbox "ContainerNumberDisplay"{
+					hasframe = FALSE;
+					width = 20%;
+					height = 10%;
+					left = -60%;
+					top = 0%;
+					plotbox "digit399"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 450p;
+						top = 0p;
+						displaycondition = digit3 == 99;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit30"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 450p;
+						top = 0p;
+						displaycondition = digit3 == 0;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "0";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit31"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 450p;
+						top = 0p;
+						displaycondition = digit3 == 1;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "1";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit32"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 450p;
+						top = 0p;
+						displaycondition = digit3 == 2;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "2";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit33"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 450p;
+						top = 0p;
+						displaycondition = digit3 == 3;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "3";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit34"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 450p;
+						top = 0p;
+						displaycondition = digit3 == 4;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "4";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit35"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 450p;
+						top = 0p;
+						displaycondition = digit3 == 5;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "5";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit36"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 450p;
+						top = 0p;
+						displaycondition = digit3 == 6;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "6";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit37"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 450p;
+						top = 0p;
+						displaycondition = digit3 == 7;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "7";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit38"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 450p;
+						top = 0p;
+						displaycondition = digit3 == 8;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "8";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit39"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 450p;
+						top = 0p;
+						displaycondition = digit3 == 9;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "9";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit299"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 500p;
+						top = 0p;
+						displaycondition = digit2 == 99;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit20"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 500p;
+						top = 0p;
+						displaycondition = digit2 == 0;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "0";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit21"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 500p;
+						top = 0p;
+						displaycondition = digit2 == 1;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "1";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit22"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 500p;
+						top = 0p;
+						displaycondition = digit2 == 2;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "2";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit23"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 500p;
+						top = 0p;
+						displaycondition = digit2 == 3;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "3";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit24"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 500p;
+						top = 0p;
+						displaycondition = digit2 == 4;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "4";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit25"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 500p;
+						top = 0p;
+						displaycondition = digit2 == 5;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "5";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit26"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 500p;
+						top = 0p;
+						displaycondition = digit2 == 6;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "6";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit27"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 500p;
+						top = 0p;
+						displaycondition = digit2 == 7;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "7";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit28"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 500p;
+						top = 0p;
+						displaycondition = digit2 == 8;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "8";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit29"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 500p;
+						top = 0p;
+						displaycondition = digit2 == 9;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "9";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit199"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 550p;
+						top = 0p;
+						displaycondition = digit1 == 99;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit10"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 550p;
+						top = 0p;
+						displaycondition = digit1 == 0;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "0";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit11"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 550p;
+						top = 0p;
+						displaycondition = digit1 == 1;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "1";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit12"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 550p;
+						top = 0p;
+						displaycondition = digit1 == 2;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "2";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit13"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 550p;
+						top = 0p;
+						displaycondition = digit1 == 3;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "3";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit14"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 550p;
+						top = 0p;
+						displaycondition = digit1 == 4;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "4";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit15"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 550p;
+						top = 0p;
+						displaycondition = digit1 == 5;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "5";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit16"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 550p;
+						top = 0p;
+						displaycondition = digit1 == 6;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "6";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit17"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 550p;
+						top = 0p;
+						displaycondition = digit1 == 7;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "7";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit18"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 550p;
+						top = 0p;
+						displaycondition = digit1 == 8;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "8";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+					plotbox "digit19"{
+						hasframe = FALSE;
+						width = 50p;
+						height = 90p;
+						left = 550p;
+						top = 0p;
+						displaycondition = digit1 == 9;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = FALSE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = -100;
+						xright = 100;
+						ybottom = -100;
+						ytop = 100;
+						plottext ""{
+							text = "9";
+							y = -40;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+					}
+				}
+				containerbox "ContainerNumberPad"{
+					hasframe = FALSE;
+					width = 350p;
+					height = 400p;
+					left = 150p;
+					top = 100p;
+					plotbox "touchbox"{
+						hasframe = TRUE;
+						width = 63p;
+						height = 96p;
+						left = 0p;
+						top = 0p;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = TRUE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = 0;
+						xright = 63;
+						ybottom = 0;
+						ytop = 96;
+						plottext ""{
+							text = "1";
+							x = 30;
+							y = 30;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+						plotinput "touch"{
+							event = LEFTCLICK;
+							key = " ";
+							action = NEW;
+							table = subjects;
+							xvariable = TestMouseX;
+							yvariable = TestMouseY;
+							leavestage = FALSE;
+							program{
+								table = subjects;
+								do{
+									number = number*10 + 1;
+									numdigits = numdigits + 1;
+									
+									digit1=mod(number,10);
+									digit2=(mod(number,100)-mod(number,10))/10;
+									digit3=(mod(number,1000)-mod(number,100))/100;
+									digit4=(mod(number,10000)-mod(number,1000))/1000;
+									digit5=(mod(number,100000)-mod(number,10000))/10000;
+									digit6=(mod(number,1000000)-mod(number,100000))/100000;
+									digit7=(mod(number,10000000)-mod(number,1000000))/1000000;
+									digit8=(mod(number,100000000)-mod(number,10000000))/10000000;
+									digit9=(mod(number,1000000000)-mod(number,100000000))/100000000;
+									digit10=(mod(number,10000000000)-mod(number,1000000000))/1000000000;
+									digit11=(mod(number,100000000000)-mod(number,10000000000))/10000000000;
+									
+									if (numdigits < 11) {  digit11=99; }
+									if (numdigits < 10) {  digit10=99; }
+									if (numdigits < 9) {  digit9=99; }
+									if (numdigits < 8) {  digit8=99; }
+									if (numdigits < 7) {  digit7=99; }
+									if (numdigits < 6) {  digit6=99; }
+									if (numdigits < 5) {  digit5=99; }
+									if (numdigits < 4) {  digit4=99; }
+									if (numdigits < 3) {  digit3=99; }
+									if (numdigits <2) {  digit2=99; }
+									if (numdigits <1) {  digit1=99; }
+									
+									
+								}
+							}
+						}
+					}
+					plotbox "touchbox"{
+						hasframe = TRUE;
+						width = 63p;
+						height = 96p;
+						left = 63p;
+						top = 0p;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = TRUE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = 0;
+						xright = 63;
+						ybottom = 0;
+						ytop = 96;
+						plottext ""{
+							text = "2";
+							x = 30;
+							y = 30;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+						plotinput "touch"{
+							event = LEFTCLICK;
+							key = " ";
+							action = NEW;
+							table = subjects;
+							xvariable = TestMouseX;
+							yvariable = TestMouseY;
+							leavestage = FALSE;
+							program{
+								table = subjects;
+								do{
+									number = number*10 + 2;
+									numdigits = numdigits + 1;
+									
+									digit1=mod(number,10);
+									digit2=(mod(number,100)-mod(number,10))/10;
+									digit3=(mod(number,1000)-mod(number,100))/100;
+									digit4=(mod(number,10000)-mod(number,1000))/1000;
+									digit5=(mod(number,100000)-mod(number,10000))/10000;
+									digit6=(mod(number,1000000)-mod(number,100000))/100000;
+									digit7=(mod(number,10000000)-mod(number,1000000))/1000000;
+									digit8=(mod(number,100000000)-mod(number,10000000))/10000000;
+									digit9=(mod(number,1000000000)-mod(number,100000000))/100000000;
+									digit10=(mod(number,10000000000)-mod(number,1000000000))/1000000000;
+									digit11=(mod(number,100000000000)-mod(number,10000000000))/10000000000;
+									
+									if (numdigits < 11) {  digit11=99; }
+									if (numdigits < 10) {  digit10=99; }
+									if (numdigits < 9) {  digit9=99; }
+									if (numdigits < 8) {  digit8=99; }
+									if (numdigits < 7) {  digit7=99; }
+									if (numdigits < 6) {  digit6=99; }
+									if (numdigits < 5) {  digit5=99; }
+									if (numdigits < 4) {  digit4=99; }
+									if (numdigits < 3) {  digit3=99; }
+									if (numdigits <2) {  digit2=99; }
+									if (numdigits <1) {  digit1=99; }
+									
+									
+								}
+							}
+						}
+					}
+					plotbox "touchbox"{
+						hasframe = TRUE;
+						width = 63p;
+						height = 96p;
+						left = 126p;
+						top = 0p;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = TRUE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = 0;
+						xright = 63;
+						ybottom = 0;
+						ytop = 96;
+						plottext ""{
+							text = "3";
+							x = 30;
+							y = 30;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+						plotinput "touch"{
+							event = LEFTCLICK;
+							key = " ";
+							action = NEW;
+							table = subjects;
+							xvariable = TestMouseX;
+							yvariable = TestMouseY;
+							leavestage = FALSE;
+							program{
+								table = subjects;
+								do{
+									number = number*10 + 3;
+									numdigits = numdigits + 1;
+									
+									digit1=mod(number,10);
+									digit2=(mod(number,100)-mod(number,10))/10;
+									digit3=(mod(number,1000)-mod(number,100))/100;
+									digit4=(mod(number,10000)-mod(number,1000))/1000;
+									digit5=(mod(number,100000)-mod(number,10000))/10000;
+									digit6=(mod(number,1000000)-mod(number,100000))/100000;
+									digit7=(mod(number,10000000)-mod(number,1000000))/1000000;
+									digit8=(mod(number,100000000)-mod(number,10000000))/10000000;
+									digit9=(mod(number,1000000000)-mod(number,100000000))/100000000;
+									digit10=(mod(number,10000000000)-mod(number,1000000000))/1000000000;
+									digit11=(mod(number,100000000000)-mod(number,10000000000))/10000000000;
+									
+									if (numdigits < 11) {  digit11=99; }
+									if (numdigits < 10) {  digit10=99; }
+									if (numdigits < 9) {  digit9=99; }
+									if (numdigits < 8) {  digit8=99; }
+									if (numdigits < 7) {  digit7=99; }
+									if (numdigits < 6) {  digit6=99; }
+									if (numdigits < 5) {  digit5=99; }
+									if (numdigits < 4) {  digit4=99; }
+									if (numdigits < 3) {  digit3=99; }
+									if (numdigits <2) {  digit2=99; }
+									if (numdigits <1) {  digit1=99; }
+									
+									
+								}
+							}
+						}
+					}
+					plotbox "touchbox"{
+						hasframe = TRUE;
+						width = 63p;
+						height = 96p;
+						left = 0p;
+						top = 96p;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = TRUE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = 0;
+						xright = 63;
+						ybottom = 0;
+						ytop = 96;
+						plottext ""{
+							text = "4";
+							x = 30;
+							y = 30;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+						plotinput "touch"{
+							event = LEFTCLICK;
+							key = " ";
+							action = NEW;
+							table = subjects;
+							xvariable = TestMouseX;
+							yvariable = TestMouseY;
+							leavestage = FALSE;
+							program{
+								table = subjects;
+								do{
+									number = number*10 + 4;
+									numdigits = numdigits + 1;
+									digit1=mod(number,10);
+									digit2=(mod(number,100)-mod(number,10))/10;
+									digit3=(mod(number,1000)-mod(number,100))/100;
+									digit4=(mod(number,10000)-mod(number,1000))/1000;
+									digit5=(mod(number,100000)-mod(number,10000))/10000;
+									digit6=(mod(number,1000000)-mod(number,100000))/100000;
+									digit7=(mod(number,10000000)-mod(number,1000000))/1000000;
+									digit8=(mod(number,100000000)-mod(number,10000000))/10000000;
+									digit9=(mod(number,1000000000)-mod(number,100000000))/100000000;
+									digit10=(mod(number,10000000000)-mod(number,1000000000))/1000000000;
+									digit11=(mod(number,100000000000)-mod(number,10000000000))/10000000000;
+									
+									if (numdigits < 11) {  digit11=99; }
+									if (numdigits < 10) {  digit10=99; }
+									if (numdigits < 9) {  digit9=99; }
+									if (numdigits < 8) {  digit8=99; }
+									if (numdigits < 7) {  digit7=99; }
+									if (numdigits < 6) {  digit6=99; }
+									if (numdigits < 5) {  digit5=99; }
+									if (numdigits < 4) {  digit4=99; }
+									if (numdigits < 3) {  digit3=99; }
+									if (numdigits <2) {  digit2=99; }
+									if (numdigits <1) {  digit1=99; }
+									
+									
+								}
+							}
+						}
+					}
+					plotbox "touchbox"{
+						hasframe = TRUE;
+						width = 63p;
+						height = 96p;
+						left = 63p;
+						top = 96p;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = TRUE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = 0;
+						xright = 63;
+						ybottom = 0;
+						ytop = 96;
+						plottext ""{
+							text = "5";
+							x = 30;
+							y = 30;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+						plotinput "touch"{
+							event = LEFTCLICK;
+							key = " ";
+							action = NEW;
+							table = subjects;
+							xvariable = TestMouseX;
+							yvariable = TestMouseY;
+							leavestage = FALSE;
+							program{
+								table = subjects;
+								do{
+									number = number*10 + 5;
+									numdigits = numdigits + 1;
+									digit1=mod(number,10);
+									digit2=(mod(number,100)-mod(number,10))/10;
+									digit3=(mod(number,1000)-mod(number,100))/100;
+									digit4=(mod(number,10000)-mod(number,1000))/1000;
+									digit5=(mod(number,100000)-mod(number,10000))/10000;
+									digit6=(mod(number,1000000)-mod(number,100000))/100000;
+									digit7=(mod(number,10000000)-mod(number,1000000))/1000000;
+									digit8=(mod(number,100000000)-mod(number,10000000))/10000000;
+									digit9=(mod(number,1000000000)-mod(number,100000000))/100000000;
+									digit10=(mod(number,10000000000)-mod(number,1000000000))/1000000000;
+									digit11=(mod(number,100000000000)-mod(number,10000000000))/10000000000;
+									
+									if (numdigits < 11) {  digit11=99; }
+									if (numdigits < 10) {  digit10=99; }
+									if (numdigits < 9) {  digit9=99; }
+									if (numdigits < 8) {  digit8=99; }
+									if (numdigits < 7) {  digit7=99; }
+									if (numdigits < 6) {  digit6=99; }
+									if (numdigits < 5) {  digit5=99; }
+									if (numdigits < 4) {  digit4=99; }
+									if (numdigits < 3) {  digit3=99; }
+									if (numdigits <2) {  digit2=99; }
+									if (numdigits <1) {  digit1=99; }
+									
+									
+								}
+							}
+						}
+					}
+					plotbox "touchbox"{
+						hasframe = TRUE;
+						width = 63p;
+						height = 96p;
+						left = 126p;
+						top = 96p;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = TRUE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = 0;
+						xright = 63;
+						ybottom = 0;
+						ytop = 96;
+						plottext ""{
+							text = "6";
+							x = 30;
+							y = 30;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+						plotinput "touch"{
+							event = LEFTCLICK;
+							key = " ";
+							action = NEW;
+							table = subjects;
+							xvariable = TestMouseX;
+							yvariable = TestMouseY;
+							leavestage = FALSE;
+							program{
+								table = subjects;
+								do{
+									number = number*10 + 6;
+									numdigits = numdigits + 1;
+									digit1=mod(number,10);
+									digit2=(mod(number,100)-mod(number,10))/10;
+									digit3=(mod(number,1000)-mod(number,100))/100;
+									digit4=(mod(number,10000)-mod(number,1000))/1000;
+									digit5=(mod(number,100000)-mod(number,10000))/10000;
+									digit6=(mod(number,1000000)-mod(number,100000))/100000;
+									digit7=(mod(number,10000000)-mod(number,1000000))/1000000;
+									digit8=(mod(number,100000000)-mod(number,10000000))/10000000;
+									digit9=(mod(number,1000000000)-mod(number,100000000))/100000000;
+									digit10=(mod(number,10000000000)-mod(number,1000000000))/1000000000;
+									digit11=(mod(number,100000000000)-mod(number,10000000000))/10000000000;
+									
+									if (numdigits < 11) {  digit11=99; }
+									if (numdigits < 10) {  digit10=99; }
+									if (numdigits < 9) {  digit9=99; }
+									if (numdigits < 8) {  digit8=99; }
+									if (numdigits < 7) {  digit7=99; }
+									if (numdigits < 6) {  digit6=99; }
+									if (numdigits < 5) {  digit5=99; }
+									if (numdigits < 4) {  digit4=99; }
+									if (numdigits < 3) {  digit3=99; }
+									if (numdigits <2) {  digit2=99; }
+									if (numdigits <1) {  digit1=99; }
+									
+									
+								}
+							}
+						}
+					}
+					plotbox "touchbox"{
+						hasframe = TRUE;
+						width = 63p;
+						height = 96p;
+						left = 0p;
+						top = 192p;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = TRUE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = 0;
+						xright = 63;
+						ybottom = 0;
+						ytop = 96;
+						plottext ""{
+							text = "7";
+							x = 30;
+							y = 30;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+						plotinput "touch"{
+							event = LEFTCLICK;
+							key = " ";
+							action = NEW;
+							table = subjects;
+							xvariable = TestMouseX;
+							yvariable = TestMouseY;
+							leavestage = FALSE;
+							program{
+								table = subjects;
+								do{
+									number = number*10 + 7;
+									numdigits = numdigits + 1;
+									digit1=mod(number,10);
+									digit2=(mod(number,100)-mod(number,10))/10;
+									digit3=(mod(number,1000)-mod(number,100))/100;
+									digit4=(mod(number,10000)-mod(number,1000))/1000;
+									digit5=(mod(number,100000)-mod(number,10000))/10000;
+									digit6=(mod(number,1000000)-mod(number,100000))/100000;
+									digit7=(mod(number,10000000)-mod(number,1000000))/1000000;
+									digit8=(mod(number,100000000)-mod(number,10000000))/10000000;
+									digit9=(mod(number,1000000000)-mod(number,100000000))/100000000;
+									digit10=(mod(number,10000000000)-mod(number,1000000000))/1000000000;
+									digit11=(mod(number,100000000000)-mod(number,10000000000))/10000000000;
+									
+									if (numdigits < 11) {  digit11=99; }
+									if (numdigits < 10) {  digit10=99; }
+									if (numdigits < 9) {  digit9=99; }
+									if (numdigits < 8) {  digit8=99; }
+									if (numdigits < 7) {  digit7=99; }
+									if (numdigits < 6) {  digit6=99; }
+									if (numdigits < 5) {  digit5=99; }
+									if (numdigits < 4) {  digit4=99; }
+									if (numdigits < 3) {  digit3=99; }
+									if (numdigits <2) {  digit2=99; }
+									if (numdigits <1) {  digit1=99; }
+									
+									
+								}
+							}
+						}
+					}
+					plotbox "touchbox"{
+						hasframe = TRUE;
+						width = 63p;
+						height = 96p;
+						left = 63p;
+						top = 192p;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = TRUE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = 0;
+						xright = 63;
+						ybottom = 0;
+						ytop = 96;
+						plottext ""{
+							text = "8";
+							x = 30;
+							y = 30;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+						plotinput "touch"{
+							event = LEFTCLICK;
+							key = " ";
+							action = NEW;
+							table = subjects;
+							xvariable = TestMouseX;
+							yvariable = TestMouseY;
+							leavestage = FALSE;
+							program{
+								table = subjects;
+								do{
+									number = number*10 + 8;
+									numdigits = numdigits + 1;
+									digit1=mod(number,10);
+									digit2=(mod(number,100)-mod(number,10))/10;
+									digit3=(mod(number,1000)-mod(number,100))/100;
+									digit4=(mod(number,10000)-mod(number,1000))/1000;
+									digit5=(mod(number,100000)-mod(number,10000))/10000;
+									digit6=(mod(number,1000000)-mod(number,100000))/100000;
+									digit7=(mod(number,10000000)-mod(number,1000000))/1000000;
+									digit8=(mod(number,100000000)-mod(number,10000000))/10000000;
+									digit9=(mod(number,1000000000)-mod(number,100000000))/100000000;
+									digit10=(mod(number,10000000000)-mod(number,1000000000))/1000000000;
+									digit11=(mod(number,100000000000)-mod(number,10000000000))/10000000000;
+									
+									if (numdigits < 11) {  digit11=99; }
+									if (numdigits < 10) {  digit10=99; }
+									if (numdigits < 9) {  digit9=99; }
+									if (numdigits < 8) {  digit8=99; }
+									if (numdigits < 7) {  digit7=99; }
+									if (numdigits < 6) {  digit6=99; }
+									if (numdigits < 5) {  digit5=99; }
+									if (numdigits < 4) {  digit4=99; }
+									if (numdigits < 3) {  digit3=99; }
+									if (numdigits <2) {  digit2=99; }
+									if (numdigits <1) {  digit1=99; }
+									
+									
+								}
+							}
+						}
+					}
+					plotbox "touchbox"{
+						hasframe = TRUE;
+						width = 63p;
+						height = 96p;
+						left = 126p;
+						top = 192p;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = TRUE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = 0;
+						xright = 63;
+						ybottom = 0;
+						ytop = 96;
+						plottext ""{
+							text = "9";
+							x = 30;
+							y = 30;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+						plotinput "touch"{
+							event = LEFTCLICK;
+							key = " ";
+							action = NEW;
+							table = subjects;
+							xvariable = TestMouseX;
+							yvariable = TestMouseY;
+							leavestage = FALSE;
+							program{
+								table = subjects;
+								do{
+									number = number*10 + 9;
+									numdigits = numdigits + 1;
+									digit1=mod(number,10);
+									digit2=(mod(number,100)-mod(number,10))/10;
+									digit3=(mod(number,1000)-mod(number,100))/100;
+									digit4=(mod(number,10000)-mod(number,1000))/1000;
+									digit5=(mod(number,100000)-mod(number,10000))/10000;
+									digit6=(mod(number,1000000)-mod(number,100000))/100000;
+									digit7=(mod(number,10000000)-mod(number,1000000))/1000000;
+									digit8=(mod(number,100000000)-mod(number,10000000))/10000000;
+									digit9=(mod(number,1000000000)-mod(number,100000000))/100000000;
+									digit10=(mod(number,10000000000)-mod(number,1000000000))/1000000000;
+									digit11=(mod(number,100000000000)-mod(number,10000000000))/10000000000;
+									
+									if (numdigits < 11) {  digit11=99; }
+									if (numdigits < 10) {  digit10=99; }
+									if (numdigits < 9) {  digit9=99; }
+									if (numdigits < 8) {  digit8=99; }
+									if (numdigits < 7) {  digit7=99; }
+									if (numdigits < 6) {  digit6=99; }
+									if (numdigits < 5) {  digit5=99; }
+									if (numdigits < 4) {  digit4=99; }
+									if (numdigits < 3) {  digit3=99; }
+									if (numdigits <2) {  digit2=99; }
+									if (numdigits <1) {  digit1=99; }
+									
+									
+								}
+							}
+						}
+					}
+					plotbox "touchbox"{
+						hasframe = TRUE;
+						width = 63p;
+						height = 96p;
+						left = 63p;
+						top = 288p;
+						bgcolor = rgb(1.00,1.00,1.00);
+						maintainaspectratio = TRUE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = 0;
+						xright = 63;
+						ybottom = 0;
+						ytop = 96;
+						plottext ""{
+							text = "0";
+							x = 30;
+							y = 30;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 70;
+						}
+						plotinput "touch"{
+							event = LEFTCLICK;
+							key = " ";
+							action = NEW;
+							table = subjects;
+							xvariable = TestMouseX;
+							yvariable = TestMouseY;
+							leavestage = FALSE;
+							program{
+								table = subjects;
+								do{
+									number = number*10 + 0;
+									numdigits = numdigits + 1;
+									digit1=mod(number,10);
+									digit2=(mod(number,100)-mod(number,10))/10;
+									digit3=(mod(number,1000)-mod(number,100))/100;
+									digit4=(mod(number,10000)-mod(number,1000))/1000;
+									digit5=(mod(number,100000)-mod(number,10000))/10000;
+									digit6=(mod(number,1000000)-mod(number,100000))/100000;
+									digit7=(mod(number,10000000)-mod(number,1000000))/1000000;
+									digit8=(mod(number,100000000)-mod(number,10000000))/10000000;
+									digit9=(mod(number,1000000000)-mod(number,100000000))/100000000;
+									digit10=(mod(number,10000000000)-mod(number,1000000000))/1000000000;
+									digit11=(mod(number,100000000000)-mod(number,10000000000))/10000000000;
+									
+									if (numdigits < 11) {  digit11=99; }
+									if (numdigits < 10) {  digit10=99; }
+									if (numdigits < 9) {  digit9=99; }
+									if (numdigits < 8) {  digit8=99; }
+									if (numdigits < 7) {  digit7=99; }
+									if (numdigits < 6) {  digit6=99; }
+									if (numdigits < 5) {  digit5=99; }
+									if (numdigits < 4) {  digit4=99; }
+									if (numdigits < 3) {  digit3=99; }
+									if (numdigits <2) {  digit2=99; }
+									if (numdigits <1) {  digit1=99; }
+									
+									
+								}
+							}
+						}
+					}
+					plotbox "touchbox"{
+						hasframe = TRUE;
+						width = 126p;
+						height = 192p;
+						left = 220p;
+						top = 0p;
+						displaycondition = input == -999;
+						bgcolor = rgb(1.00,0.00,0.00);
+						maintainaspectratio = TRUE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = 0;
+						xright = 63;
+						ybottom = 0;
+						ytop = 96;
+						plottext ""{
+							text = "Clear";
+							x = 30;
+							y = 50;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 40;
+						}
+						plotinput "touch"{
+							event = LEFTCLICK;
+							key = " ";
+							action = NEW;
+							table = subjects;
+							xvariable = TestMouseX;
+							yvariable = TestMouseY;
+							leavestage = FALSE;
+							program{
+								table = subjects;
+								do{
+									number = 0;
+									numdigits = 0;
+									digit1=mod(number,10);
+									digit2=(mod(number,100)-mod(number,10))/10;
+									digit3=(mod(number,1000)-mod(number,100))/100;
+									digit4=(mod(number,10000)-mod(number,1000))/1000;
+									digit5=(mod(number,100000)-mod(number,10000))/10000;
+									digit6=(mod(number,1000000)-mod(number,100000))/100000;
+									digit7=(mod(number,10000000)-mod(number,1000000))/1000000;
+									digit8=(mod(number,100000000)-mod(number,10000000))/10000000;
+									digit9=(mod(number,1000000000)-mod(number,100000000))/100000000;
+									digit10=(mod(number,10000000000)-mod(number,1000000000))/1000000000;
+									digit11=(mod(number,100000000000)-mod(number,10000000000))/10000000000;
+									
+									if (numdigits < 11) {  digit11=99; }
+									if (numdigits < 10) {  digit10=99; }
+									if (numdigits < 9) {  digit9=99; }
+									if (numdigits < 8) {  digit8=99; }
+									if (numdigits < 7) {  digit7=99; }
+									if (numdigits < 6) {  digit6=99; }
+									if (numdigits < 5) {  digit5=99; }
+									if (numdigits < 4) {  digit4=99; }
+									if (numdigits < 3) {  digit3=99; }
+									if (numdigits <2) {  digit2=99; }
+									if (numdigits <1) {  digit1=99; }
+									
+									input=-999;
+									
+									
+								}
+							}
+						}
+					}
+					plotbox "touchbox"{
+						hasframe = TRUE;
+						width = 126p;
+						height = 192p;
+						left = 220p;
+						top = 192p;
+						displaycondition = input == -999 & number != 0;
+						bgcolor = rgb(0.00,1.00,0.00);
+						maintainaspectratio = TRUE;
+						xaxistype = LINEAR;
+						yaxistype = LINEAR;
+						xleft = 0;
+						xright = 63;
+						ybottom = 0;
+						ytop = 96;
+						plottext ""{
+							text = "OK";
+							x = 30;
+							y = 50;
+							horizontalalignment = CENTER;
+							verticalalignment = CENTER;
+							textcolor = rgb(0,0,0);
+							font = Arial;
+							fontsize = 25;
+						}
+						plotinput "touch"{
+							event = LEFTCLICK;
+							key = " ";
+							action = NEW;
+							table = subjects;
+							xvariable = TestMouseX;
+							yvariable = TestMouseY;
+							leavestage = TRUE;
+							checker{
+								condition = number >= 18 & number <= 100;
+								message = "<>You entered your age as <number | 1> years old. Please enter an age over 18 and less than 100 years old.";
+								noButtonStr = "OK";
+							}
+							program{
+								table = subjects;
+								do{
+									input=1;
+									
+									
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		screen wait{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+		}
+	}
+	roles{
+		role "S 1"{
+		}
+	}
+	period "1"{
+		subject 1{
+			group = 1;
+		}
+	}
+}
