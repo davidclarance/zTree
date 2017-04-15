@@ -1,0 +1,318 @@
+treatment "RandomizingWithinAStage"{
+	background{
+		table globals{
+		}
+		table subjects{
+		}
+		table summary{
+		}
+		table contracts{
+		}
+		table session{
+		}
+		table logfile{
+		}
+		numsubjects = 1;
+		numgroups = 1;
+		numpracticeperiods = 0;
+		numactualperiods = 1;
+		exchangerate = 1;
+		startendowment = 0;
+		showupfee = 0;
+		noAutoscope = FALSE;
+		firstBoxesOnTop = FALSE;
+		showupfeeawaytext = "Sie haben Verlust gemacht. Wollen Sie das Startgeld einsetzen, um diesen Verlust zu decken?";
+		showupfeeawayyestext = "Ja";
+		showupfeeawaynotext = "Nein";
+		moneyawaytext = "Sie haben Verlust gemacht. Wollen Sie weiterfahren?";
+		moneyawayyestext = "Ja";
+		moneyawaynotext = "Nein";
+		bancruptwaittext = "Bitte warten Sie bis Ihr Computer wieder freigegeben wird.";
+		program{
+			table = subjects;
+			do{
+				/* 
+				Authors: David Clarance (david.clarance@busaracenter.org) (see below for original)
+				Description: Randomize elements within a stage. 
+				Date: April 15, 2017
+				
+				Programming notes:
+				1. Randomizing Algorithm.
+				*The algorithm implemented here is called the Fischer-Yates algorithm.
+				*A detailed explanation can be found at http://cess.nyu.edu/cess-experiments/z-tree-cheat-sheet/v-random-role-assignment/
+				* I'm not sure who first implemented this algorithm in zTree, to the best of my knowledge it's Anwar Ruff. You can find his github here: https://github.com/aaruff
+				
+				2. Application to this task
+				* Once the randomized array has been created, display conditions are adjusted using the array and the counter.
+				* checj thie display conditions of the container to understand what's happening.
+				*/
+			}
+		}
+		program{
+			table = subjects;
+			do{
+				// Create randomized array
+				
+				
+				// Create an array. The length of the sequence needs to be equal to the number of stages.
+				array order[3];
+				
+				
+				// Populate the array such that the value is equal to the index number
+				i =1; 
+				while(i <= 3) { 
+				order[i] = i; 
+				i = i + 1; 
+				}
+				
+				// Set counter to the max
+				i = 3; 
+				
+				
+				// Starting from the top, you just go down the array and swap values and indices with a random variable. 
+				while(i >= 2) { 
+				old = order[i];
+				newi = roundup(random() * i,1); 
+				order[i] = order[newi]; 
+				order[newi] = old; 
+				i = i - 1;  
+				}
+			}
+		}
+		program{
+			table = subjects;
+			do{
+				// Initialize movement variables
+				
+				game_counter = 1;
+			}
+		}
+		screen action{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+		}
+		screen wait{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+			standardbox "Text"{
+				hasframe = TRUE;
+				buttonposition = BOTTOMRIGHT;
+				buttonsequence = HORIZONTAL;
+				item{
+					label = "Please wait for the experiment to continue!";
+				}
+			}
+		}
+	}
+	stage "Stage"{
+		startwaitforall = TRUE;
+		singleentry = FALSE;
+		singleentrycontinuation = FALSE;
+		timeouttype = ifnoinput;
+		timeout = 30;
+		screen action{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+			containerbox "Container-1"{
+				hasframe = TRUE;
+				displaycondition = order[game_counter] == 1;
+				standardbox "Standard"{
+					hasframe = TRUE;
+					buttonposition = BOTTOMRIGHT;
+					buttonsequence = HORIZONTAL;
+					item{
+						label = "{\\rtf \\fs30 \\qc This is a screen for Decision 1.}";
+					}
+				}
+				plotbox "Continue"{
+					hasframe = TRUE;
+					width = 20%;
+					height = 10%;
+					right = 40%;
+					bottom = 1%;
+					bgcolor = rgb(0.50,0.50,1.00);
+					maintainaspectratio = FALSE;
+					xaxistype = LINEAR;
+					yaxistype = LINEAR;
+					xleft = -100;
+					xright = 100;
+					ybottom = -100;
+					ytop = 100;
+					plottext ""{
+						text = "Continue";
+						x = 0;
+						y = 0;
+						horizontalalignment = CENTER;
+						verticalalignment = CENTER;
+						textcolor = rgb(0,0,0);
+						font = MS Sans Serif;
+						fontsize = 20;
+					}
+					plotinput "touch"{
+						event = LEFTCLICK;
+						key = " ";
+						action = NEW;
+						table = subjects;
+						xvariable = TestMouseX;
+						yvariable = TestMouseY;
+						leavestage = FALSE;
+						program{
+							table = subjects;
+							do{
+								game_counter = game_counter + 1;
+								
+								
+							}
+						}
+						program{
+							table = subjects;
+							condition = game_counter == 4;
+							do{
+								LeaveStage = 1;
+							}
+						}
+					}
+				}
+			}
+			containerbox "Container-2"{
+				hasframe = TRUE;
+				displaycondition = order[game_counter] == 2;
+				standardbox "Standard"{
+					hasframe = TRUE;
+					buttonposition = BOTTOMRIGHT;
+					buttonsequence = HORIZONTAL;
+					item{
+						label = "{\\rtf \\fs30 \\qc This is a screen for Decision 2.}";
+					}
+				}
+				plotbox "Continue"{
+					hasframe = TRUE;
+					width = 20%;
+					height = 10%;
+					right = 40%;
+					bottom = 1%;
+					bgcolor = rgb(0.50,0.50,1.00);
+					maintainaspectratio = FALSE;
+					xaxistype = LINEAR;
+					yaxistype = LINEAR;
+					xleft = -100;
+					xright = 100;
+					ybottom = -100;
+					ytop = 100;
+					plottext ""{
+						text = "Continue";
+						x = 0;
+						y = 0;
+						horizontalalignment = CENTER;
+						verticalalignment = CENTER;
+						textcolor = rgb(0,0,0);
+						font = MS Sans Serif;
+						fontsize = 20;
+					}
+					plotinput "touch"{
+						event = LEFTCLICK;
+						key = " ";
+						action = NEW;
+						table = subjects;
+						xvariable = TestMouseX;
+						yvariable = TestMouseY;
+						leavestage = FALSE;
+						program{
+							table = subjects;
+							do{
+								game_counter = game_counter + 1;
+								
+								
+							}
+						}
+						program{
+							table = subjects;
+							condition = game_counter == 4;
+							do{
+								LeaveStage = 1;
+							}
+						}
+					}
+				}
+			}
+			containerbox "Container-2"{
+				hasframe = TRUE;
+				displaycondition = order[game_counter] == 3;
+				standardbox "Standard"{
+					hasframe = TRUE;
+					buttonposition = BOTTOMRIGHT;
+					buttonsequence = HORIZONTAL;
+					item{
+						label = "{\\rtf \\fs30 \\qc This is a screen for Decision 3.}";
+					}
+				}
+				plotbox "Continue"{
+					hasframe = TRUE;
+					width = 20%;
+					height = 10%;
+					right = 40%;
+					bottom = 1%;
+					bgcolor = rgb(0.50,0.50,1.00);
+					maintainaspectratio = FALSE;
+					xaxistype = LINEAR;
+					yaxistype = LINEAR;
+					xleft = -100;
+					xright = 100;
+					ybottom = -100;
+					ytop = 100;
+					plottext ""{
+						text = "Continue";
+						x = 0;
+						y = 0;
+						horizontalalignment = CENTER;
+						verticalalignment = CENTER;
+						textcolor = rgb(0,0,0);
+						font = MS Sans Serif;
+						fontsize = 20;
+					}
+					plotinput "touch"{
+						event = LEFTCLICK;
+						key = " ";
+						action = NEW;
+						table = subjects;
+						xvariable = TestMouseX;
+						yvariable = TestMouseY;
+						leavestage = FALSE;
+						program{
+							table = subjects;
+							do{
+								game_counter = game_counter + 1;
+								
+								
+							}
+						}
+						program{
+							table = subjects;
+							condition = game_counter == 4;
+							do{
+								LeaveStage = 1;
+							}
+						}
+					}
+				}
+			}
+		}
+		screen wait{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+		}
+	}
+	roles{
+		role "S 1"{
+		}
+	}
+	period "1"{
+		subject 1{
+			group = 1;
+		}
+	}
+}

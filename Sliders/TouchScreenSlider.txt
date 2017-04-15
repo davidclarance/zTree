@@ -1,0 +1,381 @@
+treatment "TouchScreenSlider"{
+	background{
+		table globals{
+		}
+		table subjects{
+		}
+		table summary{
+		}
+		table contracts{
+		}
+		table session{
+		}
+		table logfile{
+		}
+		numsubjects = 1;
+		numgroups = 1;
+		numpracticeperiods = 0;
+		numactualperiods = 1;
+		exchangerate = 1;
+		startendowment = 0;
+		showupfee = 0;
+		noAutoscope = FALSE;
+		firstBoxesOnTop = FALSE;
+		showupfeeawaytext = "Sie haben Verlust gemacht. Wollen Sie das Startgeld einsetzen, um diesen Verlust zu decken?";
+		showupfeeawayyestext = "Ja";
+		showupfeeawaynotext = "Nein";
+		moneyawaytext = "Sie haben Verlust gemacht. Wollen Sie weiterfahren?";
+		moneyawayyestext = "Ja";
+		moneyawaynotext = "Nein";
+		bancruptwaittext = "Bitte warten Sie bis Ihr Computer wieder freigegeben wird.";
+		program{
+			table = subjects;
+			do{
+				// Initialize required variables
+				AmountReceived = -99;
+				AmountSent = -99;
+			}
+		}
+		screen action{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+		}
+		screen wait{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+			standardbox "Text"{
+				hasframe = TRUE;
+				buttonposition = BOTTOMRIGHT;
+				buttonsequence = HORIZONTAL;
+				item{
+					label = "Please wait for the experiment to continue!";
+				}
+			}
+		}
+	}
+	stage "Slider"{
+		startwaitforall = TRUE;
+		singleentry = FALSE;
+		singleentrycontinuation = FALSE;
+		timeouttype = never;
+		timeout = 60;
+		program{
+			table = subjects;
+			do{
+				// Initialize required variables for slider
+				PointerPosition= -1000; //sets the pointer position outside the screen so there are no default values.
+				Responded = 0; //To be used in the checker
+			}
+		}
+		program{
+			table = subjects;
+			do{
+				// Set bounds of the scale. Not that in time preference experiments these can be expressed as multiples of each other.
+				maxL = 100;
+				maxR = 100;
+				
+				// These are the response selected variables
+				numberL=0;
+				numberR=0;
+				
+				
+				
+			}
+		}
+		screen action{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+			plotbox "LeftDisplay"{
+				hasframe = TRUE;
+				height = 20%;
+				left = 5%;
+				right = 55%;
+				bottom = 30%;
+				maintainaspectratio = FALSE;
+				xaxistype = LINEAR;
+				yaxistype = LINEAR;
+				xleft = -100;
+				xright = 100;
+				ybottom = -100;
+				ytop = 100;
+				plottext ""{
+					text = "Amount for myself";
+					x = -82;
+					y = 35;
+					horizontalalignment = LEFT;
+					verticalalignment = FIRSTLINE;
+					textcolor = rgb(0,0,0);
+					font = Arial;
+					fontsize = 40;
+				}
+				plottext ""{
+					text = "<><numberL|1> Ksh";
+					x = -80;
+					y = -90;
+					horizontalalignment = LEFT;
+					verticalalignment = FIRSTLINE;
+					textcolor = rgb(1,0,0);
+					font = Arial;
+					fontsize = 50;
+				}
+			}
+			plotbox "RightDisplay"{
+				hasframe = TRUE;
+				height = 20%;
+				left = 55%;
+				right = 5%;
+				bottom = 30%;
+				maintainaspectratio = FALSE;
+				xaxistype = LINEAR;
+				yaxistype = LINEAR;
+				xleft = -100;
+				xright = 100;
+				ybottom = -100;
+				ytop = 100;
+				plottext ""{
+					text = "Amount sent to my partner";
+					x = -82;
+					y = 35;
+					horizontalalignment = LEFT;
+					verticalalignment = FIRSTLINE;
+					textcolor = rgb(0,0,0);
+					font = Arial;
+					fontsize = 40;
+				}
+				plottext ""{
+					text = "<><numberR|1> Ksh";
+					x = -80;
+					y = -90;
+					horizontalalignment = LEFT;
+					verticalalignment = FIRSTLINE;
+					textcolor = rgb(1.00,0.00,0.00);
+					font = Arial;
+					fontsize = 50;
+				}
+			}
+			plotbox "touchbox"{
+				hasframe = FALSE;
+				height = 50%;
+				top = 0%;
+				maintainaspectratio = TRUE;
+				xaxistype = LINEAR;
+				yaxistype = LINEAR;
+				xleft = -100;
+				xright = 100;
+				ybottom = 0;
+				ytop = 100;
+				plotinput "touch"{
+					event = LEFTCLICK;
+					key = " ";
+					action = NEW;
+					table = subjects;
+					xvariable = TestMouseX;
+					yvariable = TestMouseY;
+					leavestage = FALSE;
+					program{
+						table = subjects;
+						do{
+							if (TestMouseY >=0 & TestMouseY <=100 & TestMouseX >=-110 & TestMouseX <=110) { 
+							
+							Responded = 1; 
+							
+							if (TestMouseX <=-100) {
+							    numberR = 0;
+							    numberL = maxL;
+							}
+							elsif (TestMouseX >=100 ) {
+							    numberR = maxR;
+							    numberL= 0;
+							}
+							elsif (TestMouseX >=-100& TestMouseX <=100) {
+							   numberR = round(maxR* ((TestMouseX+100)/(100+100)),1); 
+							   numberL = round(maxR - numberR, 1);
+							
+							}
+							PointerPosition = TestMouseX;
+							
+							}
+							
+							
+						}
+					}
+				}
+				plottext ""{
+					displaycondition = TestMouseX >=-100& TestMouseX <=100;
+					text = "v";
+					x = PointerPosition-5;
+					y = 40;
+					horizontalalignment = LEFT;
+					verticalalignment = FIRSTLINE;
+					textcolor = rgb(0,0,0);
+					font = Arial;
+					fontsize = 100;
+				}
+				plottext ""{
+					text = "Keep more for myself.";
+					x = -110;
+					y = 35;
+					horizontalalignment = LEFT;
+					verticalalignment = FIRSTLINE;
+					textcolor = rgb(0,0,0);
+					font = Arial;
+					fontsize = 20;
+				}
+				plottext ""{
+					text = "Send more to my partner.";
+					x = 65;
+					y = 35;
+					horizontalalignment = LEFT;
+					verticalalignment = FIRSTLINE;
+					textcolor = rgb(0,0,0);
+					font = Arial;
+					fontsize = 20;
+				}
+				plotline ""{
+					x1 = -100;
+					y1 = 45;
+					x2 = 100;
+					y2 = 45;
+					linecolor = rgb(0.00,0.00,0.00);
+					linewidth = 3;
+					arrowclosed = FALSE;
+				}
+			}
+			plotbox "Header"{
+				hasframe = FALSE;
+				width = 80%;
+				height = 15%;
+				left = 10%;
+				top = 2%;
+				maintainaspectratio = FALSE;
+				xaxistype = LINEAR;
+				yaxistype = LINEAR;
+				xleft = 0;
+				xright = 100;
+				ybottom = 0;
+				ytop = 100;
+				plottext ""{
+					text = "How much would you like to send you partner?";
+					x = 50;
+					y = 60;
+					width = 10000;
+					horizontalalignment = CENTER;
+					verticalalignment = TOP;
+					textcolor = rgb(0,0,0);
+					font = Arial;
+					fontsize = 40;
+				}
+			}
+			containerbox "ContainerOKArea"{
+				hasframe = FALSE;
+				width = 40%;
+				height = 15%;
+				bottom = 5%;
+				displaycondition = numberR != 0 | numberL != 0;
+				plotbox "ClearBox"{
+					hasframe = TRUE;
+					width = 40%;
+					height = 100%;
+					left = 0%;
+					bgcolor = rgb(1.00,0.50,0.50);
+					maintainaspectratio = TRUE;
+					xaxistype = LINEAR;
+					yaxistype = LINEAR;
+					xleft = 0;
+					xright = 63;
+					ybottom = 0;
+					ytop = 96;
+					plottext ""{
+						text = "Clear";
+						x = 25;
+						y = 42;
+						horizontalalignment = CENTER;
+						verticalalignment = CENTER;
+						textcolor = rgb(0.00,0.00,0.00);
+						font = Arial;
+						fontsize = 40;
+					}
+					plotinput "touch"{
+						event = LEFTCLICK;
+						key = " ";
+						action = NEW;
+						table = subjects;
+						xvariable = TestMouseX;
+						yvariable = TestMouseY;
+						leavestage = FALSE;
+						program{
+							table = subjects;
+							do{
+								numberL = 0;
+								numberR = 0;
+								
+							}
+						}
+					}
+				}
+				plotbox "OKBox"{
+					hasframe = TRUE;
+					width = 40%;
+					height = 100%;
+					right = 0%;
+					bgcolor = rgb(0.50,1.00,0.50);
+					maintainaspectratio = TRUE;
+					xaxistype = LINEAR;
+					yaxistype = LINEAR;
+					xleft = 0;
+					xright = 63;
+					ybottom = 0;
+					ytop = 96;
+					plottext ""{
+						text = "OK";
+						x = 25;
+						y = 42;
+						horizontalalignment = CENTER;
+						verticalalignment = CENTER;
+						textcolor = rgb(0,0,0);
+						font = Arial;
+						fontsize = 40;
+					}
+					plotinput "touch"{
+						event = LEFTCLICK;
+						key = " ";
+						action = NEW;
+						table = subjects;
+						xvariable = TestMouseX;
+						yvariable = TestMouseY;
+						leavestage = TRUE;
+						checker{
+							condition = Responded == 1;
+							message = "Please make a response.";
+							noButtonStr = "OK";
+						}
+						program{
+							table = subjects;
+							do{
+								AmountReceived = numberL;
+								AmountSent = numberR;
+							}
+						}
+					}
+				}
+			}
+		}
+		screen wait{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+		}
+	}
+	roles{
+		role "S 1"{
+		}
+	}
+	period "1"{
+		subject 1{
+			group = 1;
+		}
+	}
+}

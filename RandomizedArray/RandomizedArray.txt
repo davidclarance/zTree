@@ -1,0 +1,144 @@
+treatment "RandomizedArray"{
+	background{
+		table globals{
+		}
+		table subjects{
+		}
+		table summary{
+		}
+		table contracts{
+		}
+		table session{
+		}
+		table logfile{
+		}
+		numsubjects = 1;
+		numgroups = 1;
+		numpracticeperiods = 0;
+		numactualperiods = 1;
+		exchangerate = 1;
+		startendowment = 0;
+		showupfee = 0;
+		noAutoscope = FALSE;
+		firstBoxesOnTop = FALSE;
+		showupfeeawaytext = "Sie haben Verlust gemacht. Wollen Sie das Startgeld einsetzen, um diesen Verlust zu decken?";
+		showupfeeawayyestext = "Ja";
+		showupfeeawaynotext = "Nein";
+		moneyawaytext = "Sie haben Verlust gemacht. Wollen Sie weiterfahren?";
+		moneyawayyestext = "Ja";
+		moneyawaynotext = "Nein";
+		bancruptwaittext = "Bitte warten Sie bis Ihr Computer wieder freigegeben wird.";
+		program{
+			table = subjects;
+			do{
+				/* 
+				Authors: David Clarance (david.clarance@busaracenter.org) (see below for original)
+				Description: Create a random sequence using arrays. An implementation of 
+				Date: April 15, 2017
+				
+				Programming notes:
+				*The algorithm implemented here is called the Fischer-Yates algorithm.
+				*A detailed explanation can be found at http://cess.nyu.edu/cess-experiments/z-tree-cheat-sheet/v-random-role-assignment/
+				* I'm not sure who first implemented this algorithm in zTree, to the best of my knowledge it's Anwar Ruff. You can find his github here: https://github.com/aaruff
+				*/
+			}
+		}
+		program{
+			table = subjects;
+			do{
+				// Create randomized array
+				
+				
+				// Create an array. The length of the sequence needs to be equal to the number of stages.
+				array order[3];
+				
+				
+				// Populate the array such that the value is equal to the index number
+				i =1; 
+				while(i <= 3) { 
+				order[i] = i; 
+				i = i + 1; 
+				}
+				
+				// Set counter to the max
+				i = 3; 
+				
+				
+				// Starting from the top, you just go down the array and swap values and indices with a random variable. 
+				while(i >= 2) { 
+				old = order[i];
+				newi = roundup(random() * i,1); 
+				order[i] = order[newi]; 
+				order[newi] = old; 
+				i = i - 1;  
+				}
+			}
+		}
+		screen action{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+		}
+		screen wait{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+			standardbox "Text"{
+				hasframe = TRUE;
+				buttonposition = BOTTOMRIGHT;
+				buttonsequence = HORIZONTAL;
+				item{
+					label = "Please wait for the experiment to continue.";
+				}
+			}
+		}
+	}
+	stage "DisplayOrder"{
+		startwaitforall = TRUE;
+		singleentry = FALSE;
+		singleentrycontinuation = FALSE;
+		timeouttype = ifnoinput;
+		timeout = 30;
+		screen action{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+			standardbox "Standard"{
+				hasframe = TRUE;
+				buttonposition = BOTTOMRIGHT;
+				buttonsequence = HORIZONTAL;
+				item{
+					label = "<>{\\rtf \\fs30 \\qc This is the first number in the array: <order[1]|1>.";
+				}
+				item{
+					label = "<>{\\rtf \\fs30  \\qc This is the second second in the array: <order[2]|1>.";
+				}
+				item{
+					label = "<>{\\rtf \\fs30 \\qc This is the third number in the array: <order[3]|1>.";
+				}
+				button "OK"{
+					clearinputafterok = FALSE;
+					norecordmadeorselected = FALSE;
+					terminatestage = TRUE;
+					donotterminatestage = FALSE;
+					specialbuttoncolor = FALSE;
+					buttoncolor = 0;
+				}
+			}
+		}
+		screen wait{
+			usesbg = TRUE;
+			withalertscreen = FALSE;
+			noalertscreen = FALSE;
+		}
+	}
+	roles{
+		role "S 1"{
+		}
+	}
+	period "1"{
+		subject 1{
+			group = 1;
+		}
+	}
+}
