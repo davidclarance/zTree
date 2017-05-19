@@ -17,7 +17,7 @@ sitemap: false
 </form>
 
 <!-- Search results placeholder -->
-<h6 class="redtext" data-search-found>
+<h6 style = "color:#BC2A0A;" data-search-found>
   <span data-search-found-count></span> result(s) found for &ldquo;<span data-search-found-term></span>&rdquo;.
 </h6>
 <ul class="post-list" data-search-results></ul>
