@@ -26,7 +26,7 @@ share: true
 Add figures here if useful. Screenshots of code snippets are also acceptable. 
 
 <figure>
-  <img src="/images/slider.jpg" alt="image">
+  <img src="tree/gh-pages/images/slider.jpg" alt="image">
 </figure>
 
 
