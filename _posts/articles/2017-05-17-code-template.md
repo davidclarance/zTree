@@ -26,7 +26,7 @@ share: true
 Add link to figures folder here if useful. Screenshots of code snippets are also acceptable. 
 
 
-![slider](images/template/slider.jpg)
+![slider](https://github.com/davidclarance/zTree/blob/gh-pages/images/template/slider.jpg)
 
 
 ### Documentation
