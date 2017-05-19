@@ -5,7 +5,7 @@ locale: en_US
 description: A repository of zTree files and related tools.
 logo: ztreelogo.png
 search: true
-url: https://davidclarance.github.io/zTreeLibrary
+url: https://davidclarance.github.io/zTree
 
 # Jekyll configuration
 
