@@ -29,8 +29,8 @@ Add link to figures folder here if useful. Screenshots of code snippets are also
 ![slider](/tree/gh-pages/images/template/test.jpeg)
 
 <figure class="half">
-  <img src="/tree/gh-pages/images/template/test.jpg" alt="image">  
-  <img src="/tree/gh-pages/images/template/test.jpg" alt="image">
+  <img src="/tree/gh-pages/images/template/test.jpeg" alt="image">  
+  <img src="/tree/gh-pages/images/template/test.jpeg" alt="image">
   <figcaption>Caption describing these two images.</figcaption>
 </figure>
 
