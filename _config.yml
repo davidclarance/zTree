@@ -1,11 +1,13 @@
 # Site wide configuration
 
-title: zTree Library for Behaviroral Sciences
+title: zTree Repository for the Behavioral Sciences
 locale: en_US
-description: A repository of zTree files and related tools.
+description: A library of zTree files, tutorials and related tools.
 logo: ztreelogo.png
 search: true
 url: https://davidclarance.github.io/zTree
+
+#http://localhost:4000
 
 # Jekyll configuration
 
