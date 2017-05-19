@@ -29,8 +29,8 @@ Add link to figures folder here if useful. Screenshots of code snippets are also
 ![slider](https://github.com/davidclarance/zTree/blob/gh-pages/images/template/slider.jpg)
 
 <figure class="half">
-  <img src="/tree/gh-pages/images/template/simplebuttons.jpg" alt="image">  
-  <img src="/tree/gh-pages/images/template/slider.jpg" alt="image">
+  <img src="/tree/gh-pages/images/template/test.jpg" alt="image">  
+  <img src="/tree/gh-pages/images/template/test.jpg" alt="image">
   <figcaption>Caption describing these two images.</figcaption>
 </figure>
 
