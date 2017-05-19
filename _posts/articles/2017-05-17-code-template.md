@@ -26,7 +26,7 @@ share: true
 Add link to figures folder here if useful. Screenshots of code snippets are also acceptable. 
 
 
-![slider](/tree/gh-pages/images/template/test.jpg)
+![slider](/tree/gh-pages/images/template/test.jpeg)
 
 <figure class="half">
   <img src="/tree/gh-pages/images/template/test.jpg" alt="image">  
