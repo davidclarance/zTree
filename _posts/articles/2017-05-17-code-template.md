@@ -26,7 +26,7 @@ share: true
 Add figures here if useful. Screenshots of code snippets are also acceptable. 
 
 <figure class="half">
-  <img src="/images/simplebuttons.jpg" alt="image">
+  <img src="https://github.com/davidclarance/zTree/blob/gh-pages/images/template/simplebuttons.jpg" alt="image">
   <img src="/images/slider.jpg" alt="image">
   <figcaption>Two sample images.</figcaption>
 </figure>
