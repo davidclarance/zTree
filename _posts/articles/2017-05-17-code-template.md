@@ -8,7 +8,11 @@ comments: true
 share: true
 ---
 
-Please use the following template to upload code snippets. 
+<br><br>
+
+<center> <div markdown="0"><a href="https://raw.githubusercontent.com/davidclarance/zTree/master/NumberPad/NumberPad.txt" class="btn">Download zTree </a></div></center>
+
+<br><br>
 
 ### Description
 
@@ -16,12 +20,6 @@ Please use the following template to upload code snippets.
 2. Purpose: *Why is this file useful?*
 3. Version: *What version of zTree was the file created with?*
 4. Notes: *Add additional notes if necessary - original authors, ztree background specificiations etc.*
-
-
-<br><br>
-
-<center> <div markdown="0"><a href="https://raw.githubusercontent.com/davidclarance/zTree/master/NumberPad/NumberPad.txt" class="btn">Download zTree </a></div></center>
-
 
 
 ### Figures
