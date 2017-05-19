@@ -25,10 +25,8 @@ share: true
 
 Add figures here if useful. Screenshots of code snippets are also acceptable. 
 
-<figure class="half">
-  <a href="http://placehold.it/1200x600.jpg"><img src="/images/simplebuttons.jpg" alt="image"></a>
+<figure>
   <img src="/images/slider.jpg" alt="image">
-  <figcaption>Two sample images.</figcaption>
 </figure>
 
 
