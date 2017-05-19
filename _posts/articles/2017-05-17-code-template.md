@@ -18,7 +18,7 @@ Please use the following template to upload code snippets.
 4. Notes: *Add additional notes if necessary - original authors, ztree background specificiations etc.*
 
 
-
+<br><br>
 
 <center> <div markdown="0"><a href="https://raw.githubusercontent.com/davidclarance/zTree/master/NumberPad/NumberPad.txt" class="btn">Download zTree </a></div></center>
 
@@ -40,11 +40,11 @@ Add figures here if useful. Screenshots of code snippets are also acceptable.
 
 You can place additional notes on how to use the file. All documentation must contain the section below
 
-#### Using this file
+###### Using this file
 
 To use this zTree file, click the **Download** button above. It will take you to a text file. Right click and "Save As" to your computer. In zTree use File > Import to read the file in. Please note that there are compatibility issues across different zTree versions so make you have a version that's the same or later than the version the file was written in.
 
-#### Additional instructions
+###### Additional instructions
 
 Place additional instructions here.  
 
