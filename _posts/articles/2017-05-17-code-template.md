@@ -10,9 +10,8 @@ share: true
 
 <br><br>
 
-<center> <div markdown="0"><a href="https://raw.githubusercontent.com/davidclarance/zTree/master/NumberPad/NumberPad.txt" class="btn">Download zTree </a></div></center>
+<center> <div markdown="0"><a href="https://raw.githubusercontent.com/davidclarance/zTree/master/NumberPad/NumberPad.txt" class="btn">Download code </a></div></center>
 
-<br><br>
 
 ### Description
 
@@ -27,8 +26,8 @@ share: true
 Add figures here if useful. Screenshots of code snippets are also acceptable. 
 
 <figure class="half">
-  <img src="/images/template/simplebuttons.png" alt="image">
-  <img src="/images/template/slider.png" alt="image">
+  <img src="/images/template/simplebuttons.jpg" alt="image">
+  <img src="/images/template/slider.jpg" alt="image">
   <figcaption>Two sample images.</figcaption>
 </figure>
 
