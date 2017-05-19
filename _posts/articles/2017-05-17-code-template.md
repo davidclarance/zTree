@@ -23,13 +23,10 @@ share: true
 
 ### Figures
 
-Add figures here if useful. Screenshots of code snippets are also acceptable. 
+Add link to figures folder here if useful. Screenshots of code snippets are also acceptable. 
 
-<figure>
-  <img src="images/slider.jpg" alt="image">
-  <figcaption>Caption describing these two images.</figcaption>
-</figure>
 
+![slider](images/template/slider.jpg)
 
 
 ### Documentation
