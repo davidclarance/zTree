@@ -2,7 +2,7 @@
 layout: post
 title: Touch screen number pad
 excerpt: "Number pad with Clear button to enable individuals who have never used a keyboard before to enter numbers"
-categories: articles
+categories: code
 tags: [Input method]
 comments: true
 share: true

@@ -2,7 +2,7 @@
 layout: post
 title: Randomizing screens within a stage
 excerpt: "Generate random orders of screens within a stage"
-categories: articles
+categories: code
 tags: [Randomization]
 comments: true
 share: true
@@ -37,6 +37,7 @@ To use the zTree text file, click the **Download text** button above. It will ta
 ###### Important variables in the zTree file
 
 `order[n]` - Array that is randomized. `n` gives the length of the array.
+
 `game_counter` - Counter variable that cycles through screens within a stage. 
 
 

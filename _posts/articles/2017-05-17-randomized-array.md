@@ -2,7 +2,7 @@
 layout: post
 title: Creating randomized arrays
 excerpt: "Create a array with randomized numbers drawn without replacement"
-categories: articles
+categories: code
 tags: [Randomization]
 comments: true
 share: true

@@ -2,7 +2,7 @@
 layout: post
 title: zTree Code Template
 excerpt: "A standardized format to upload a new code snippet"
-categories: articles
+categories: code
 tags: [formatting]
 comments: true
 share: true
