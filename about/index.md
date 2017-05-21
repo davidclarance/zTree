@@ -12,22 +12,29 @@ image:
 <div align="justify">
 Busara uses social and behavioral science to solve problems in development and povety alleviation. From our headquarters in Nairobi, Kenya, we collaborate with organizations from around the world to implement world-class research and data driven advisory and consulting. 
 
-The **Decision Lab** housed at Busara is a state-of-the-art behavioral science laboratory equipped with 40 networked computers across two independent halls. The Lab has an active subject pool of over 10,000 respondents and counting. Participants come from informal areas (Kibera, Kawangware, Viwandani) and the University of Nairobi.  
 
-Busara also has **mobile lab capabilities** consisting of 25 tablet computers that have been used to run experiments across Kenya, in Tanzania and Uganda.  
+The <b>Decision Lab</b> housed at Busara is a state-of-the-art behavioral science laboratory equipped with 40 networked computers across two independent halls. The Lab has an active subject pool of over 10,000 respondents and counting. Participants come from informal areas (Kibera, Kawangware, Viwandani) and the University of Nairobi.  
+
+
+Busara also has <b>mobile lab capabilities</b> consisting of 25 tablet computers that have been used to run experiments across Kenya, in Tanzania and Uganda.  
 </div> 
+
 
 ## Open Science at Busara
 
 <div align="justify">
 Busara has always encouraged academics and researchers who have worked with us to share tools and resources with the larger academic community. We believe that science is a collaborative exercise and moves ahead when transparency is prioritized. Further, in developing markets, this has an even larger impact as sharing of tools, data, and conversations around what works and more importantly, what doesn’t work, helps streamline the research process. 
 
+
 As a community this has been happening organically over the past several years -- for instance, our knowledge of what risk and time preference tools work in our context has proved incredibly valuable in providing reliable estimates for these key measures.  This could only have been achieved through the collaborative efforts of many PIs on multiple lab projects.
 
-**This website is one step towards opening up our own tools and instruments. We hope that you will find it useful.** 
 
-If you are interested in running an experiment with us, have general questions or have feedback about the website, please feel free to email [David Clarance](david.clarance@busaracenter.org).
+<b>This website is one step towards opening up our own tools and instruments. We hope that you will find it useful.</b>
+
+
+If you are interested in running an experiment with us, have general questions or have feedback about the website, please feel free to email <a href="mailto:david.clarance@busaracenter.org">David Clarance</a>.
 </div>
+
 
 ## zTree
 
