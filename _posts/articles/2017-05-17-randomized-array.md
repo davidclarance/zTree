@@ -1,53 +1,43 @@
 ---
 layout: post
-title: zTree Code Template
-excerpt: "A standardized format to upload a new code snippet"
+title: Creating randomized arrays
+excerpt: "Create a array with randomized numbers drawn without replacement"
 categories: articles
-tags: [formatting]
+tags: [Randomization]
 comments: true
 share: true
 ---
 
-<br><br>
 
-<center> <div markdown="0"><a href="https://raw.githubusercontent.com/davidclarance/zTree/gh-pages/_posts/articles/2017-05-17-code-template.md" class="btn">Download code </a></div></center>
+<div class="btn-group">
+ <a href="https://raw.githubusercontent.com/davidclarance/zTree/gh-pages/CodeSnippets/RandomizedArray/RandomizedArray.txt" class="btn">Download raw text </a>
+ <a href="https://github.com/davidclarance/zTree/blob/gh-pages/CodeSnippets/RandomizedArray/RandomizedArray.ztt" class="btn">Download ztt </a>
+ <a href="https://github.com/davidclarance/zTree/blob/gh-pages/CodeSnippets/RandomizedArray/RandomizedArray.png" class="btn">View image</a>
+</div>
+
+
+
 
 
 ### Description
 
-1. Author: *Sample author*
-2. Purpose: *Why is this file useful?*
-3. Version: *What version of zTree was the file created with?*
-4. Notes: *Add additional notes if necessary - original authors, ztree background specificiations etc.*
-
-
-### Figures
-
-Add link to figures folder here if useful. Screenshots of code snippets are also acceptable. 
-
-
-![slider](https://github.com/davidclarance/zTree/blob/gh-pages/images/template/test.jpeg)
-
-<figure class="half">
-  <img src="/tree/gh-pages/images/template/test.jpeg" alt="image">  
-  <img src="/tree/gh-pages/images/template/test.jpeg" alt="image">
-  <figcaption>Caption describing these two images.</figcaption>
-</figure>
+1. **Author**: David Clarance. See original attribution and details below.  
+2. **Purpose**: Generate an array with randomized numbers drawn without replacement from a distribution. 
+3. **Version**: 3.6.6
 
 
 ### Documentation
 
-You can place additional notes on how to use the file. All documentation must contain the section below
+###### Attribution and details
 
-###### Using this file
+This method is by no means mine. It derives from the [Fisher-Yater shuffle](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle) algorithm. I first saw it used by [Anwar A. Ruff](http://anwarruff.com/) and he provides code and a really nice, detailed explanation [here](http://cess.nyu.edu/cess-experiments/z-tree-cheat-sheet/v-random-role-assignment/). Anwar has a great set of tools for running experiments, do check out his [github](https://github.com/aaruff) page. 
 
-To use this zTree file, click the **Download** button above. It will take you to a text file. Right click and "Save As" to your computer. In zTree use File > Import to read the file in. Please note that there are compatibility issues across different zTree versions so make you have a version that's the same or later than the version the file was written in.
+###### Using the text file
 
-###### Additional instructions
+To use the zTree text file, click the **Download text** button above. It will take you to a text file. Right click and "Save As" to your computer. In zTree use File > Import to read the file in. Please note that there are compatibility issues across different zTree versions so make you have a version that's the same or later than the version the file was written in.
 
-Place additional instructions here.  
+###### Important variables in the zTree file
 
-
-
+`order[n]` - Array that is randomized. `n` gives the length of the array.
 
 

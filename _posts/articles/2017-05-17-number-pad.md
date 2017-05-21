@@ -18,7 +18,7 @@ share: true
 
 ### Description
 
-1. **Author**: David Clarance 
+1. **Author**: Chaning Jang
 2. **Purpose**: An on-screen number pad to enable individuals who have never used a keyboard to enter numbers.
 3. **Version**: 3.6.6
 
