@@ -10,7 +10,7 @@ share: true
 
 <br><br>
 
-<center> <div markdown="0"><a href="https://raw.githubusercontent.com/davidclarance/zTree/gh-pages/_posts/articles/2017-05-17-code-template.md" class="btn">Download code </a></div></center>
+<center> <div markdown="0"><a href="https://raw.githubusercontent.com/davidclarance/zTree/gh-pages/_posts/code/2017-05-17-code-template.md" class="btn">Download code </a></div></center>
 
 
 ### Description

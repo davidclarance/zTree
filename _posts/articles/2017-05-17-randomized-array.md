@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: Creating randomized arrays
 excerpt: "Create a array with randomized numbers drawn without replacement"
 categories: code

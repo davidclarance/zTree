@@ -28,7 +28,7 @@ share: true
 
 ###### Attribution and details
 
-This file derives from drawing numbers generated in a [randomized array](https://davidclarance.github.io/zTree/articles/randomized-array/). The randomized array  method is by no means mine. It derives from the [Fisher-Yater shuffle](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle) algorithm. I first saw it used by [Anwar A. Ruff](http://anwarruff.com/) and he provides code and a really nice, detailed explanation [here](http://cess.nyu.edu/cess-experiments/z-tree-cheat-sheet/v-random-role-assignment/). Anwar has a great set of tools for running experiments, do check out his [github](https://github.com/aaruff) page. 
+This file derives from drawing numbers generated in a [randomized array](https://davidclarance.github.io/zTree/code/randomized-array/). The randomized array  method is by no means mine. It derives from the [Fisher-Yater shuffle](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle) algorithm. I first saw it used by [Anwar A. Ruff](http://anwarruff.com/) and he provides code and a really nice, detailed explanation [here](http://cess.nyu.edu/cess-experiments/z-tree-cheat-sheet/v-random-role-assignment/). Anwar has a great set of tools for running experiments, do check out his [github](https://github.com/aaruff) page. 
 
 ###### Using the text file
 
