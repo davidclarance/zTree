@@ -2,8 +2,6 @@
 layout: page
 title: ""
 excerpt: "About the website"
-image:
-  feature: aboutphoto.jpg
 ---
 
 
