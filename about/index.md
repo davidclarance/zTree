@@ -4,7 +4,7 @@ title:
 excerpt: "About the website"
 modified: 2014-08-08T19:44:38.564948-04:00
 image:
-  feature: labphoto2.jpg
+  feature: aboutphoto.jpg
   credit: Sarah Swanson  
 ---
 
