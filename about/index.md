@@ -42,7 +42,7 @@ As a community this has been happening organically over the past several years -
 <br>
 <br>
 
-If you are interested in running an experiment with us, have general questions or have feedback about the website, please feel free to email <a href="mailto:david.clarance@busaracenter.org">David Clarance</a>.
+If you are interested in running an experiment with us, have general questions or have feedback about the website, please feel free to email <a href="mailto:david.clarance@busaracenter.org" style="color: rgb(129,0,0)">David Clarance</a>.
 </div>
 
 
@@ -50,5 +50,5 @@ If you are interested in running an experiment with us, have general questions o
 
 <div align="justify">
 z-Tree is a widely used software package for developing and carrying out economic experiments. The language used to define the experiments is simple and compact, meaning that experiments can be developed quickly, and programming experience is not necessary, though useful. The z-Tree software is implemented as a client-server application with a server application for the experimenter, called z-Tree, and a client application for the subjects, called z-Leaf. The applications are programmed in C++ (Visual C++ 2015, MFC) and run on all recent released x86 32 bit and 64 bit versions of Windows, starting with Windows XP SP3. For more information you can visit the 
-<a href="http://www.ztree.uzh.ch/en.html">website</a> or read the <a href="https://link.springer.com/article/10.1007/s10683-006-9159-4">paper</a>.
+<a href="http://www.ztree.uzh.ch/en.html" style="color: rgb(129,0,0)">website</a> or read the <a href="https://link.springer.com/article/10.1007/s10683-006-9159-4" style="color: rgb(129,0,0)">paper</a>.
 </div>
