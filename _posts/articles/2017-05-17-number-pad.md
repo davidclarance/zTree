@@ -1,51 +1,39 @@
 ---
 layout: post
-title: zTree Code Template
-excerpt: "A standardized format to upload a new code snippet"
+title: Touch screen number pad
+excerpt: "Number pad with Clear button to enable individuals who have never used a keyboard before to enter numbers"
 categories: articles
-tags: [formatting]
+tags: [Input method]
 comments: true
 share: true
 ---
 
-<br><br>
+<div class="btn-group">
+ <a href="https://raw.githubusercontent.com/davidclarance/zTree/gh-pages/CodeSnippets/NumberPad/NumberPad.txt" class="btn">Download raw text </a>
+ <a href="https://github.com/davidclarance/zTree/blob/gh-pages/CodeSnippets/NumberPad/NumberPad.ztt" class="btn">Download ztt </a>
+ <a href="https://github.com/davidclarance/zTree/blob/gh-pages/CodeSnippets/NumberPad/NumberPad.png" class="btn">View image</a>
+</div>
 
-<center> <div markdown="0"><a href="https://raw.githubusercontent.com/davidclarance/zTree/gh-pages/_posts/articles/2017-05-17-code-template.md" class="btn">Download code </a></div></center>
 
 
 ### Description
 
-1. Author: *Sample author*
-2. Purpose: *Why is this file useful?*
-3. Version: *What version of zTree was the file created with?*
-4. Notes: *Add additional notes if necessary - original authors, ztree background specificiations etc.*
-
-
-### Figures
-
-Add link to figures folder here if useful. Screenshots of code snippets are also acceptable. 
-
-
-![slider](https://github.com/davidclarance/zTree/blob/gh-pages/images/template/test.jpeg)
-
-<figure class="half">
-  <img src="/tree/gh-pages/images/template/test.jpeg" alt="image">  
-  <img src="/tree/gh-pages/images/template/test.jpeg" alt="image">
-  <figcaption>Caption describing these two images.</figcaption>
-</figure>
+1. **Author**: David Clarance 
+2. **Purpose**: An on-screen number pad to enable individuals who have never used a keyboard to enter numbers.
+3. **Version**: 3.6.6
 
 
 ### Documentation
 
-You can place additional notes on how to use the file. All documentation must contain the section below
+###### Using the text file
 
-###### Using this file
+To use the zTree text file, click the **Download text** button above. It will take you to a text file. Right click and "Save As" to your computer. In zTree use File > Import to read the file in. Please note that there are compatibility issues across different zTree versions so make you have a version that's the same or later than the version the file was written in.
 
-To use this zTree file, click the **Download** button above. It will take you to a text file. Right click and "Save As" to your computer. In zTree use File > Import to read the file in. Please note that there are compatibility issues across different zTree versions so make you have a version that's the same or later than the version the file was written in.
+###### Important variables in the zTree file
 
-###### Additional instructions
+`number` - Respondent input is stored in this variable.
 
-Place additional instructions here.  
+ 
 
 
 
