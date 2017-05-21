@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 
+title: ""
 excerpt: "About the website"
 image:
   feature: aboutphoto.jpg
